@@ -21,10 +21,12 @@ def create_order_id():
 def main():
     order_id = create_order_id()
     amount = 1.00
+
     if IS_STAGING:
         callback_url = "https://securegw-stage.paytm.in/theia/paytmCallback?ORDER_ID="
     else:
         callback_url = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID="
+
     paytm_params = {
         "body": {
             "requestType": "Payment",
@@ -41,9 +43,11 @@ def main():
             },
         },
     }
+
     checksum = PaytmChecksum.generateSignature(
         json.dumps(paytm_params["body"]), PAYTM_MERCHANT_KEY
     )
+
     paytm_params["head"] = {"signature": checksum}
     post_data = json.dumps(paytm_params)
 
