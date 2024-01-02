@@ -8,8 +8,8 @@ from paytmchecksum import PaytmChecksum
 
 load_dotenv()
 
-PAYTM_MID = os.getenv("PAYTM_MID")
-PAYTM_MERCHANT_KEY = os.getenv("PAYTM_MERCHANT_KEY")
+PAYTM_MID = os.environ["PAYTM_MID"]
+PAYTM_MERCHANT_KEY = os.environ["PAYTM_MERCHANT_KEY"]
 IS_STAGING = False
 PAYTM_WEBSITE_NAME = "DEFAULT"
 
