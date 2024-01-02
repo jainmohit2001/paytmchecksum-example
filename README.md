@@ -8,6 +8,7 @@ This is a simple code example illustrating the usage of the [paytmchecksum](http
 
    ```bash
    python3 -m venv venv
+   source ./venv/bin/activate
    ```
 
 2. Install requirements
