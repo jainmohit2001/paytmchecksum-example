@@ -10,8 +10,8 @@ load_dotenv()
 
 PAYTM_MID = os.environ["PAYTM_MID"]
 PAYTM_MERCHANT_KEY = os.environ["PAYTM_MERCHANT_KEY"]
-IS_STAGING = False
-PAYTM_WEBSITE_NAME = "DEFAULT"
+IS_STAGING = os.environ["IS_STAGING"] == "true"
+PAYTM_WEBSITE_NAME = os.environ["PAYTM_WEBSITE_NAME"]
 
 
 def create_order_id():
